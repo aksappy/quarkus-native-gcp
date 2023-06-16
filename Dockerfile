@@ -20,6 +20,7 @@
 FROM maven:3.9.2-eclipse-temurin-17-focal as build
 run apt-get update
 run apt-get install docker.io -y
+run systemctl start docker
 COPY . .
 RUN ls -lrt 
 RUN mvn package -Pnative
